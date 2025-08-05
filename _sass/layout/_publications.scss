@@ -1,0 +1,177 @@
+/* Publication layout styles */
+.publication-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.publication-content {
+  flex: 1;
+  min-width: 0; /* Prevents flex item from overflowing */
+}
+
+.publication-video {
+  flex-shrink: 0;
+  width: 300px;
+  max-width: 300px;
+  margin-top: 3rem;
+}
+
+.publication-video-content {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* YouTube iframe specific styling */
+.publication-video-content iframe {
+  width: 100%;
+  height: 169px; /* 16:9 aspect ratio for 300px width */
+  border-radius: 8px;
+}
+
+/* Publication buttons styling */
+.publication-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.75rem;
+}
+
+.publication-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.publication-buttons .btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.publication-buttons .btn--primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.publication-buttons .btn--primary:hover {
+  background-color: #0056b3;
+}
+
+.publication-buttons .btn--info {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.publication-buttons .btn--info:hover {
+  background-color: #117a8b;
+}
+
+.publication-buttons .btn--success {
+  background-color: #28a745;
+  color: white;
+}
+
+.publication-buttons .btn--success:hover {
+  background-color: #1e7e34;
+}
+
+.publication-buttons .btn--warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.publication-buttons .btn--warning:hover {
+  background-color: #e0a800;
+}
+
+.publication-buttons .btn--danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.publication-buttons .btn--danger:hover {
+  background-color: #c82333;
+}
+
+/* BibTeX content styling */
+.bibtex-content {
+  margin-top: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #f8f9fa;
+  overflow: hidden;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #e9ecef;
+  border-bottom: 1px solid #ddd;
+  font-weight: 500;
+}
+
+.bibtex-copy {
+  background: none;
+  border: 1px solid #6c757d;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  color: #6c757d;
+  transition: all 0.2s ease;
+}
+
+.bibtex-copy:hover {
+  background-color: #6c757d;
+  color: white;
+}
+
+.bibtex-text {
+  margin: 0;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #333;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+  .publication-layout {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .publication-video {
+    width: 100%;
+    max-width: 300px;
+    align-self: center;
+  }
+  
+  .publication-buttons {
+    justify-content: center;
+  }
+  
+  .publication-buttons .btn {
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+  }
+} 

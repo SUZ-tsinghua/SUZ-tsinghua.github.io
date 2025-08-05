@@ -1,0 +1,57 @@
+{% include base_path %}
+
+<div class="publication-layout">
+  <div class="publication-content">
+
+    <h2>{{ post.title }}</h2>
+    <p>{% if post.authors %}{{ post.authors }}{% endif %}<br><i>{{ post.venue }}</i> {{ post.date | default:
+      "1900-01-01" | date: "%Y" }} </p>
+    {% if post.paperurl or post.bibtexurl %}
+      <div class="publication-buttons">
+        {% if post.paperurl %}
+          <a href="{{ post.paperurl }}" class="btn btn--primary" target="_blank">
+            <i class="fas fa-file-pdf"></i> Paper
+          </a>
+        {% endif %}
+        {% if post.bibtex %}
+          <button class="btn btn--info" onclick="toggleBibtex('{{ post.title | slugify }}')">
+            <i class="fas fa-quote-left"></i> BibTeX
+          </button>
+        {% endif %}
+        {% if post.websiteurl %}
+          <a href="{{ post.websiteurl }}" class="btn btn--success" target="_blank">
+            <i class="fas fa-globe"></i> Website
+          </a>
+        {% endif %}
+        {% if post.codeurl %}
+          <a href="{{ post.codeurl }}" class="btn btn--warning" target="_blank">
+            <i class="fab fa-github"></i> Code
+          </a>
+        {% endif %}
+        {% if post.videourl %}
+          <a href="{{ post.videourl }}" class="btn btn--danger" target="_blank">
+            <i class="fas fa-play"></i> Video
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+    
+    {% if post.bibtex %}
+      <div id="bibtex-{{ post.title | slugify }}" class="bibtex-content" style="display: none;">
+        <div class="bibtex-header">
+          <span>BibTeX Citation</span>
+          <button class="bibtex-copy" onclick="copyBibtex('{{ post.title | slugify }}')">
+            <i class="fas fa-copy"></i> Copy
+          </button>
+        </div>
+        <pre class="bibtex-text">{{ post.bibtex }}</pre>
+      </div>
+    {% endif %}
+
+  </div>
+  <div class="publication-video">
+    {% if post.gifurl %}
+    <img src="{{ post.gifurl }}" alt="Publication GIF" class="publication-video-content">
+    {% endif %}
+  </div>
+</div>
