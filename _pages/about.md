@@ -12,7 +12,7 @@ I'm Zhi Su (苏智), a fourth-year undergraduate in the [Yao Class](https://iiis
 From March to August 2025, I was a visiting student at UC Berkeley, where I was honored to work with Prof. [Koushil Sreenath](https://hybrid-robotics.berkeley.edu/koushil/) and Prof. [S. Shankar Sastry](https://people.eecs.berkeley.edu/~sastry/).  
 
 
-I am looking for a 2026 PhD position.
+I will be joining UC Berkeley as a PhD student, advised by Prof. [S. Shankar Sastry](https://people.eecs.berkeley.edu/~sastry/), starting Fall 2026.
 
 # News
 - *2025.09* - I received the Yao Award (Recognition Prize).
