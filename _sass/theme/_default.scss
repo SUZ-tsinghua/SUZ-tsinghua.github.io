@@ -2,46 +2,60 @@
    DEFAULT THEME
    ========================================================================== */
 
-/* Color codes used for the theme */
-$gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
-$light-gray                 : #9ba1a6;
-$lighter-gray               : mix(#fff, $gray, 90%);
+/* Neutral scale (warm slate) */
+$gray                       : #64748b;
+$dark-gray                  : #1f2937;
+$darker-gray                : #0f172a;
+$light-gray                 : #94a3b8;
+$lighter-gray               : #e2e8f0;
 
-/* Color codes used for the site */
-$danger-color               : #ee5f5b;
-$info-color                 : #2f7f93;
-$notice-color               : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
+/* Accent + semantic colors */
+$accent-color               : #0f766e;   // deep teal
+$accent-color-hover         : #0b5f59;
+$danger-color               : #dc2626;
+$info-color                 : #0369a1;
+$notice-color               : #64748b;
+$success-color              : #047857;
+$warning-color              : #b45309;
 
-/* Other basic settings for the template */
-$border-radius              : 4px;
-$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
-$global-transition          : all 0.2s ease-in-out;
-$masthead-height            : 70px;
+/* Design tokens */
+$border-radius              : 8px;
+$border-radius-lg           : 12px;
+$box-shadow                 : 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 1px rgba(15, 23, 42, 0.03);
+$box-shadow-md              : 0 4px 12px rgba(15, 23, 42, 0.06), 0 2px 4px rgba(15, 23, 42, 0.04);
+$box-shadow-lg              : 0 10px 30px rgba(15, 23, 42, 0.08), 0 4px 8px rgba(15, 23, 42, 0.05);
+$global-transition          : all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+$masthead-height            : 68px;
 $navicon-width              : 28px;
 $navicon-height             : 4px;
-$sidebar-link-max-width     : 250px;
+$sidebar-link-max-width     : 260px;
 $sidebar-screen-min-width   : 1024px;
 
 /* Default light theme for the site */
 :root {
     --global-base-color                 : #{$gray};
-    --global-bg-color                   : #fff;
-    --global-footer-bg-color            : #f2f3f3;
+    --global-bg-color                   : #fdfcfa;
+    --global-bg-color-subtle            : #f7f5f0;
+    --global-surface-color              : #ffffff;
+    --global-footer-bg-color            : #f5f3ee;
     --global-border-color               : #{$lighter-gray};
-    --global-dark-border-color          : #bdc1c4;
-    --global-code-background-color      : #fafafa;
+    --global-border-color-soft          : rgba(15, 23, 42, 0.06);
+    --global-dark-border-color          : #cbd5e1;
+    --global-code-background-color      : #f5f3ee;
     --global-code-text-color            : #{$darker-gray};
-    --global-fig-caption-color          : mix(#fff,  #{$dark-gray}, 25%);
-    --global-link-color                 : #52adc8;
-    --global-link-color-hover           : mix(#000, #2f7f93, 25%);
-    --global-link-color-visited         : mix(#fff, #2f7f93, 25%);  
+    --global-fig-caption-color          : #{$gray};
+    --global-link-color                 : #{$accent-color};
+    --global-link-color-hover           : #{$accent-color-hover};
+    --global-link-color-visited         : #134e4a;
     --global-masthead-link-color        : #{$dark-gray};
-    --global-masthead-link-color-hover  : mix(#000, #{$gray}, 25%);    
+    --global-masthead-link-color-hover  : #{$accent-color};
     --global-text-color                 : #{$dark-gray};
-    --global-text-color-light           : #{$light-gray};
+    --global-text-color-light           : #{$gray};
     --global-thead-color                : #{$lighter-gray};
+    --global-accent-color               : #{$accent-color};
+    --global-accent-color-hover         : #{$accent-color-hover};
+    --global-shadow-sm                  : #{$box-shadow};
+    --global-shadow-md                  : #{$box-shadow-md};
+    --global-shadow-lg                  : #{$box-shadow-lg};
+    --global-masthead-bg-color          : rgba(253, 252, 250, 0.82);
 }
