@@ -35,8 +35,13 @@
 }
 
 .page__title {
-  margin-top: 0;
-  line-height: 1;
+  margin-top: 0.25em;
+  margin-bottom: 0.8em;
+  line-height: 1.1;
+  font-size: 2.4em;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--global-text-color);
 
   & + .page__meta {
     margin-top: -0.5em;
@@ -48,15 +53,45 @@
   font-size: $type-size-4;
 }
 
+.about-lead {
+  font-family: $display-font-family, $global-font-family;
+  font-size: 1.25em;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+  color: var(--global-text-color);
+  margin-top: 0;
+  margin-bottom: 1.5em;
+  font-weight: 400;
+
+  a {
+    font-weight: 500;
+  }
+}
+
 .page__content {
 
   h2 {
-    padding-bottom: 0.5em;
+    margin-top: 2.5em;
+    padding-bottom: 0.4em;
     border-bottom: 1px solid var(--global-border-color);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  h2::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 1.05em;
+    background: var(--global-accent-color);
+    border-radius: 2px;
   }
 
   p, li, dl {
     font-size: 1em;
+    line-height: 1.7;
   }
 
   /* paragraph indents */
@@ -73,13 +108,56 @@
   }
 
   a {
-    text-decoration: underline;
+    color: var(--global-link-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--global-border-color);
+    padding-bottom: 1px;
+    transition: $global-transition;
 
     &:hover {
-      text-decoration: underline;
+      color: var(--global-link-color-hover);
+      border-bottom-color: var(--global-link-color-hover);
 
       img {
         box-shadow: 0 0 10px rgba(#000, 0.25);
+        border-bottom: none;
+      }
+    }
+
+    &:has(img),
+    img {
+      border-bottom: none;
+    }
+  }
+
+  .news-list {
+    list-style: none;
+    padding: 0;
+    margin: 1em 0 2em;
+
+    li {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px dashed var(--global-border-color-soft);
+      margin: 0;
+      line-height: 1.55;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      em, .news-date {
+        flex-shrink: 0;
+        min-width: 5.5rem;
+        font-style: normal;
+        font-family: $monospace;
+        font-size: 0.82em;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        color: var(--global-accent-color);
+        text-transform: uppercase;
       }
     }
   }

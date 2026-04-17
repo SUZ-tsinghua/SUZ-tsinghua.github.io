@@ -2,53 +2,65 @@
    DARK THEME
    ========================================================================== */
 
-/* Color codes used for the theme */
-$gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
-$light-gray                 : mix(#fff, $gray, 50%);
+/* Neutral scale (slate) */
+$gray                       : #94a3b8;
+$dark-gray                  : #cbd5e1;
+$darker-gray                : #e2e8f0;
+$light-gray                 : #64748b;
 
-$background                 : #474747;
-$background-light           : mix(#fff, $background, 80%);
-$background-lighter         : mix(#fff, $background, 90%);
-$text                       : #ffffff;
-$link                       : #0ea1c5;
-$link-dark                  : mix(#000, $link, 25%);
-$link-light                 : mix(#fff, $link, 25%);
+$background                 : #0b1220;
+$background-light           : #111a2c;
+$background-lighter         : #1a2339;
+$text                       : #e2e8f0;
+$link                       : #5eead4;   // bright teal for contrast on dark
+$link-dark                  : #2dd4bf;
+$link-light                 : #99f6e4;
 
 /* Color codes used for the site */
-$danger-color               : #ee5f5b;
-$info-color                 : #2f7f93;
-$notice-color               : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
+$danger-color               : #f87171;
+$info-color                 : #60a5fa;
+$notice-color               : #94a3b8;
+$success-color              : #34d399;
+$warning-color              : #fbbf24;
 
 /* Other basic settings for the template */
-$border-radius              : 4px;
-$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
-$global-transition          : all 0.2s ease-in-out;
-$masthead-height            : 70px;
+$border-radius              : 8px;
+$border-radius-lg           : 12px;
+$box-shadow                 : 0 1px 2px rgba(0, 0, 0, 0.4);
+$box-shadow-md              : 0 4px 12px rgba(0, 0, 0, 0.35), 0 2px 4px rgba(0, 0, 0, 0.25);
+$box-shadow-lg              : 0 10px 30px rgba(0, 0, 0, 0.45), 0 4px 8px rgba(0, 0, 0, 0.3);
+$global-transition          : all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+$masthead-height            : 68px;
 $navicon-width              : 28px;
 $navicon-height             : 4px;
-$sidebar-link-max-width     : 250px;
+$sidebar-link-max-width     : 260px;
 $sidebar-screen-min-width   : 1024px;
 
 /* Dark theme for the site */
 html[data-theme="dark"] {
     --global-base-color                 : #{$background};
     --global-bg-color                   : #{$background};
-    --global-footer-bg-color            : #{$background};
-    --global-border-color               : #{$light-gray};
-    --global-dark-border-color          : #{$background-light};
-    --global-code-background-color      : #fafafa;
-    --global-code-text-color            : #{$darker-gray};
-    --global-fig-caption-color          : #{$light-gray};
+    --global-bg-color-subtle            : #{$background-light};
+    --global-surface-color              : #{$background-light};
+    --global-footer-bg-color            : #{$background-light};
+    --global-border-color               : rgba(226, 232, 240, 0.12);
+    --global-border-color-soft          : rgba(226, 232, 240, 0.08);
+    --global-dark-border-color          : rgba(226, 232, 240, 0.22);
+    --global-code-background-color      : #{$background-lighter};
+    --global-code-text-color            : #{$dark-gray};
+    --global-fig-caption-color          : #{$gray};
     --global-link-color                 : #{$link};
-    --global-link-color-hover           : #{$link-dark};
-    --global-link-color-visited         : #{$link-light};
+    --global-link-color-hover           : #{$link-light};
+    --global-link-color-visited         : #{$link-dark};
     --global-masthead-link-color        : #{$text};
-    --global-masthead-link-color-hover  : #{$background-light};
+    --global-masthead-link-color-hover  : #{$link};
     --global-text-color                 : #{$text};
-    --global-text-color-light           : #{$light-gray};
+    --global-text-color-light           : #{$gray};
     --global-thead-color                : #{$background-lighter};
+    --global-accent-color               : #{$link};
+    --global-accent-color-hover         : #{$link-light};
+    --global-shadow-sm                  : #{$box-shadow};
+    --global-shadow-md                  : #{$box-shadow-md};
+    --global-shadow-lg                  : #{$box-shadow-lg};
+    --global-masthead-bg-color          : rgba(11, 18, 32, 0.82);
 }
