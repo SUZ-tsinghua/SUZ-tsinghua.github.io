@@ -48,13 +48,20 @@
   /* for dark backgrounds */
 
   &--inverse {
-    color: var(--global-text-color-light) !important;
-    border: 1px solid var(--global-border-color) !important; /* override*/
-    background-color: var(--global-bg-color);
+    color: var(--global-text-color) !important;
+    border: 1px solid var(--global-dark-border-color) !important; /* override*/
+    background-color: var(--global-surface-color);
+    border-radius: 999px;
+    padding: 0.45em 1.1em;
+    font-weight: 500;
+    transition: $global-transition;
 
     &:hover {
       color: #fff !important;
-      border-color: var(--global-text-color-light);
+      border-color: var(--global-accent-color) !important;
+      background-color: var(--global-accent-color);
+      transform: translateY(-1px);
+      box-shadow: var(--global-shadow-md);
     }
   }
 
@@ -151,4 +158,8 @@
   &--small {
     font-size: $type-size-7;
   }
+}
+
+html[data-theme="dark"] .btn--inverse:hover {
+  color: #0b1220 !important;
 }
