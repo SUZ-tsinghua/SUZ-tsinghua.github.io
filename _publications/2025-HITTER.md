@@ -2,8 +2,8 @@
 title: "HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning"
 category: lead
 authors: "<strong>Zhi Su</strong>, Bike Zhang, Nima Rahmanian, Yuman Gao, Qiayuan Liao, Caitlin Regan, Koushil Sreenath, S. Shankar Sastry"
-date: 2025-12-01
-# venue: 'CoRL'
+date: 2026-05-01
+venue: 'ICRA'
 paperurl: 'https://arxiv.org/abs/2508.21043'
 bibtex: |
   @article{su2025hitter,
