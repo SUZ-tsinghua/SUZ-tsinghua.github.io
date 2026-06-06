@@ -6,6 +6,9 @@
     <h2>{{ post.title }}</h2>
     <p>{% if post.authors %}{{ post.authors }}{% endif %}<br><i>{{ post.venue }}</i> {{ post.date | default:
       "1900-01-01" | date: "%Y" }} </p>
+    {% if post.award %}
+      <p class="publication-award"><i class="fas fa-award"></i> {{ post.award }}</p>
+    {% endif %}
     {% if post.paperurl or post.bibtexurl %}
       <div class="publication-buttons">
         {% if post.paperurl %}

@@ -4,6 +4,7 @@ category: lead
 authors: "<strong>Zhi Su</strong>, Bike Zhang, Nima Rahmanian, Yuman Gao, Qiayuan Liao, Caitlin Regan, Koushil Sreenath, S. Shankar Sastry"
 date: 2026-05-01
 venue: 'ICRA'
+award: 'Best Paper Award Finalist on Planning and Control'
 paperurl: 'https://arxiv.org/abs/2508.21043'
 bibtex: |
   @article{su2025hitter,
