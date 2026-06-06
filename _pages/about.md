@@ -18,6 +18,7 @@ I will be joining **UC Berkeley** as a PhD student, advised by Prof. [S. Shankar
 ## News
 
 <ul class="news-list">
+  <li><em>2026.06</em><span><a href="https://humanoid-table-tennis.github.io/">HITTER</a> was named an <strong>ICRA 2026 Best Paper Award Finalist on Planning and Control</strong>.</span></li>
   <li><em>2025.09</em><span>I received the <strong>Yao Award</strong> (Recognition Prize).</span></li>
   <li><em>2025.08</em><span>Paper <a href="https://humanoid-table-tennis.github.io/">HITTER</a> out — a humanoid table tennis robot via hierarchical planning and learning.</span></li>
 </ul>
