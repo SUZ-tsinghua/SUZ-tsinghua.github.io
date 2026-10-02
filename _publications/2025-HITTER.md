@@ -15,6 +15,6 @@ bibtex: |
   }
 codeurl: # 'https://github.com/HybridRobotics/SymmLoco'
 websiteurl: 'https://humanoid-table-tennis.github.io/'
-gifurl: '/files/gifs/2025-hitter.gif'
+preview: '/files/videos/2025-hitter.mp4'
 videourl: 'https://www.youtube.com/watch?v=tOfPKW6D3gE'
 ---

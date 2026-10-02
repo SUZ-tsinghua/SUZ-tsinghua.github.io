@@ -21,6 +21,6 @@ bibtex: |
   }
 codeurl: # 'https://github.com/HybridRobotics/SymmLoco'
 websiteurl: # 'https://suz-tsinghua.github.io/SymmLoco-page/'
-gifurl: '/files/gifs/2025-toward.gif'
+preview: '/files/videos/2025-toward.mp4'
 videourl: 'https://www.youtube.com/watch?v=7gq7N16jKgI'
 ---

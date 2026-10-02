@@ -38,8 +38,8 @@
   </div>
 
   <div class="publication-video">
-    {% if post.gifurl %}
-      <img src="{{ post.gifurl | relative_url }}" alt="Publication GIF" class="publication-video-content">
+    {% if post.preview %}
+      <video class="publication-video-content" src="{{ post.preview | relative_url }}" autoplay muted loop playsinline aria-label="Preview of {{ post.title | escape }}"></video>
     {% endif %}
   </div>
 </div>

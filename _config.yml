@@ -6,7 +6,7 @@ timezone: Etc/UTC
 # Shown in the sidebar on every page
 author:
   name: "Zhi Su"
-  avatar: "avatar.png" # in /images/
+  avatar: "avatar.jpg" # in /images/
   email: "suz22.tsinghua@gmail.com"
   googlescholar: "https://scholar.google.com/citations?user=R5Y1xlUAAAAJ"
   github: "SUZ-tsinghua"

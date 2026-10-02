@@ -9,13 +9,15 @@ Source of [suz-tsinghua.github.io](https://suz-tsinghua.github.io), Zhi Su's per
 | What | Where |
 |---|---|
 | Home page text and news | `_pages/about.md` |
-| Publications | one file per paper in `_publications/`, GIFs in `files/gifs/` |
+| Publications | one file per paper in `_publications/`, preview clips in `files/videos/` |
 | CV | `files/cv.pdf` (bump the `?v=` in `_data/navigation.yml` to bust caches) |
 | Header links | `_data/navigation.yml` |
 | Sidebar links, publication section headings | `_config.yml` |
 | Styles | `_sass/`, entry point `assets/css/main.scss` |
 | Behaviour (theme toggle, contact button, BibTeX buttons) | `assets/js/main.js` |
 | Icons | `_sass/_icons.scss` (one glyph code per icon, from fontawesome.com / jpswalsh.github.io/academicons) |
+
+A preview clip is an MP4 at most 960 px wide, e.g. `ffmpeg -i clip.gif -vf scale=960:-2 -c:v libx264 -crf 26 -pix_fmt yuv420p -movflags +faststart files/videos/clip.mp4`. The same clips as GIFs were ten times the size.
 
 ## Running locally
 

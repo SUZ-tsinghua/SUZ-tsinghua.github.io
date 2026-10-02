@@ -16,6 +16,6 @@ bibtex: |
   }
 codeurl: 'https://github.com/HybridRobotics/SymmLoco'
 websiteurl: 'https://suz-tsinghua.github.io/SymmLoco-page/'
-gifurl: '/files/gifs/2024-leveraging.gif'
+preview: '/files/videos/2024-leveraging.mp4'
 videourl: 'https://www.youtube.com/watch?v=Ad1clt4Yi4U'
 ---
