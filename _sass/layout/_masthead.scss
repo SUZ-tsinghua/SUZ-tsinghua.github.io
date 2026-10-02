@@ -1,69 +1,101 @@
 /* ==========================================================================
-   MASTHEAD
+   MASTHEAD: the site header, which stays at the top while scrolling
    ========================================================================== */
 
 @use "../themes" as *;
-@use "../include/mixins" as *;
+@use "../mixins" as *;
 
 .masthead {
-  position: fixed;
+  position: sticky;
+  top: 0;
+  z-index: 20;
   background: var(--global-masthead-bg-color);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
   backdrop-filter: saturate(180%) blur(14px);
-  height: fit-content;
-  top: 0;
-  width: 100%;
+  border-bottom: 1px solid var(--global-border-color-soft);
+  font-family: $sans-serif;
   animation: intro 0.3s both;
   animation-delay: 0.15s;
-  z-index: 20;
+}
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    height: 1px;
-    background: var(--global-border-color-soft);
-    width: 100%;
+/* The links in a row; on screens too narrow for all of them the row wraps */
+.masthead__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 0.9rem;
+  min-height: $masthead-height;
+  max-width: $large;
+  margin: 0 auto;
+  padding: 0.5em 1em;
+
+  @include breakpoint($medium) {
+    gap: 0 1.7rem;
+    padding: 0.5em 1.25em;
   }
 
-  &__inner-wrap {
-    @include clearfix;
-    max-width: $large;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0.75em 1.25em;
-    font-family: $sans-serif;
+  @include breakpoint($x-large) {
+    max-width: $x-large;
+  }
 
-    @include breakpoint($x-large) {
-      max-width: $x-large;
+  a {
+    position: relative;
+    padding: 0.5rem 0;
+    color: var(--global-masthead-link-color);
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    text-decoration: none;
+    white-space: nowrap;
+
+    /* underline that grows from the left on hover */
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      width: 100%;
+      height: 2px;
+      background: var(--global-accent-color);
+      border-radius: 2px;
+      transition: $global-transition;
+      transform: scaleX(0);
+      transform-origin: left;
     }
 
-    nav {
-      z-index: 10;
-    }
+    &:hover {
+      color: var(--global-masthead-link-color-hover);
 
-    a {
-      text-decoration: none;
+      &::before {
+        transform: scaleX(1);
+      }
     }
   }
 }
 
-.masthead__menu ul {
-  margin: 0;
+.masthead__title {
+  margin-right: 0.5em;
+  font-size: 1.1em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+
+  @include breakpoint($medium) {
+    margin-right: 2em;
+  }
+}
+
+#theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
   padding: 0;
-  clear: both;
-  list-style-type: none;
-}
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--global-masthead-link-color);
 
-.masthead__menu-item {
-  background-color: transparent;
-  display: block;
-  list-style-type: none;
-  white-space: nowrap;
-
-  &--lg {
-    padding-right: 2em;
-    font-weight: 700;
-    letter-spacing: -0.01em;
+  &:hover {
+    background: var(--global-border-color-soft);
   }
 }

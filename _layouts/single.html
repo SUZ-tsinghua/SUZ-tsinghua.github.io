@@ -3,13 +3,8 @@ layout: default
 ---
 
 <article class="page">
-  <div class="page__inner-wrap">
-    <header>
-      <h1 class="page__title">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
-    </header>
-
-    <section class="page__content">
-      {{ content }}
-    </section>
+  <h1 class="page__title">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
+  <div class="page__content">
+    {{ content }}
   </div>
 </article>

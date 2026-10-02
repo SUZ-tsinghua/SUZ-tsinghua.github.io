@@ -1,0 +1,17 @@
+/* ==========================================================================
+   MIXINS
+   ========================================================================== */
+
+@use "sass:math";
+
+@mixin tab-focus {
+  outline: 5px auto #fbbf24;
+  outline-offset: -2px;
+}
+
+/* Styles for viewports at least $width wide. In em, so the query follows the browser font size. */
+@mixin breakpoint($width) {
+  @media (min-width: math.div($width, 16px) * 1em) {
+    @content;
+  }
+}

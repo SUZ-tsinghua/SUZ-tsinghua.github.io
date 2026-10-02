@@ -5,12 +5,14 @@
 @use "../themes" as *;
 
 body {
+  /* a column of masthead, content and footer; the footer takes the remaining height on short pages */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
-
-  margin: 0;
-  /* main.js replaces the top padding with the measured masthead height */
-  padding: $masthead-height 0 9em;
   font-family: $sans-serif;
   font-size: 16.5px;
   line-height: 1.65;
@@ -165,24 +167,6 @@ figcaption {
   color: var(--global-fig-caption-color);
   font-family: $serif;
   font-size: $type-size-6;
-}
-
-/* navigation lists carry no margins, padding or bullets */
-
-nav {
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  li {
-    margin-bottom: 0;
-    list-style: none;
-  }
-
-  a {
-    text-decoration: none;
-  }
 }
 
 /* ==========================================================================

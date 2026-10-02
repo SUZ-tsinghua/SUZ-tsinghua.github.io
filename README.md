@@ -14,7 +14,7 @@ Source of [suz-tsinghua.github.io](https://suz-tsinghua.github.io), Zhi Su's per
 | Header links | `_data/navigation.yml` |
 | Sidebar links, publication section headings | `_config.yml` |
 | Styles | `_sass/`, entry point `assets/css/main.scss` |
-| Behaviour (theme toggle, responsive nav, BibTeX buttons) | `assets/js/main.js` |
+| Behaviour (theme toggle, contact button, BibTeX buttons) | `assets/js/main.js` |
 | Icons | `_sass/_icons.scss` (one glyph code per icon, from fontawesome.com / jpswalsh.github.io/academicons) |
 
 ## Running locally
@@ -27,8 +27,6 @@ bundle exec jekyll serve -l   # http://localhost:4000, reloads on change
 ```
 
 `_config.yml` is only read at startup, so restart the server after changing it.
-
-Without a local Ruby, `docker compose up` builds the same thing in a container (`Dockerfile`, `docker-compose.yaml`).
 
 ## Deploying
 

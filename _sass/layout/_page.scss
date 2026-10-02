@@ -3,36 +3,34 @@
    ========================================================================== */
 
 @use "../themes" as *;
-@use "../include/mixins" as *;
+@use "../mixins" as *;
 
 #main {
-  @include clearfix;
+  width: 100%;
   max-width: $large;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2em;
-  padding-left: 1em;
-  padding-right: 1em;
+  margin: 2em auto 0;
+  padding: 0 1em 3em;
   animation: intro 0.3s both;
   animation-delay: 0.35s;
+
+  /* the sidebar beside the content on wide screens */
+  @include breakpoint($large) {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    column-gap: 6%;
+    align-items: start;
+  }
 
   @include breakpoint($x-large) {
     max-width: $x-large;
   }
 }
 
+/* prose pages keep a narrower column for reading */
 .page {
   @include breakpoint($large) {
-    float: right;
-    width: grid-span(10);
-    margin-right: 0;
-    padding-left: grid-span(0.5) + $grid-gutter;
-    padding-right: grid-span(2) + $grid-gutter;
+    padding-right: 20%;
   }
-}
-
-.page__inner-wrap {
-  @include full-width;
 }
 
 .page__title {
@@ -61,7 +59,6 @@
 }
 
 .page__content {
-  @include full-width;
   margin-bottom: 1.5em;
 
   h2 {

@@ -1,9 +1,6 @@
 ---
 permalink: /
 title: "Hi, I'm Zhi 👋"
-redirect_from: 
-  - /about/
-  - /about.html
 ---
 
 <p class="about-lead">

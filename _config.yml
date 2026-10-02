@@ -34,18 +34,7 @@ include:
 exclude:
   - LICENSE
   - README.md
-  - Dockerfile
-  - docker-compose.yaml
 
 sass:
   style: compressed
   sourcemap: development # no main.css.map in production
-
-plugins:
-  - jekyll-redirect-from
-
-# Used by _layouts/compress.html
-compress_html:
-  clippings: all
-  ignore:
-    envs: development

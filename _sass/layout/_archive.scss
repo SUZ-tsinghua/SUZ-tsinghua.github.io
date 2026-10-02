@@ -3,23 +3,9 @@
    ========================================================================== */
 
 @use "../themes" as *;
-@use "../include/mixins" as *;
 
 .archive {
   margin-bottom: 2em;
-
-  @include breakpoint($medium) {
-    float: left;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  @include breakpoint($large) {
-    float: right;
-    width: grid-span(10);
-    padding-left: grid-span(0.5) + $grid-gutter;
-  }
 
   a {
     color: var(--global-link-color);

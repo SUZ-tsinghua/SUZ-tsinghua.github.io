@@ -1,82 +1,39 @@
 /* ==========================================================================
-   SIDEBAR
+   SIDEBAR: avatar, name and contact links
    ========================================================================== */
 
 @use "../themes" as *;
-@use "../include/mixins" as *;
+@use "../mixins" as *;
 
+/* On narrow screens one row of avatar, name and a Contact button that folds the links out below.
+   On wide screens a column beside the content that stays in view while scrolling. */
 .sidebar {
-  transform: translate3d(0, 0, 0);
-
-  @include clearfix();
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5em 1em;
   margin-bottom: 1em;
   animation: intro 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
   animation-delay: 0.2s;
 
-  @media (orientation: portrait) {
-    margin-top: 1em;
-  }
-
-  @media screen and (min-width: $sidebar-screen-min-width) {
-    height: 100vh;
-    overflow-y: auto;               // Add scrollbar if the sidebar is too long
-    position: fixed;
-    padding-top: $masthead-height;  // main.js replaces this with the measured masthead height
-  }
-
   @include breakpoint($large) {
-    float: left;
-    width: grid-span(2);
-    margin-right: $grid-gutter;
-  }
-
-  @include breakpoint($x-large) {
-    max-width: $sidebar-link-max-width;
-    padding-right: 0;
-  }
-
-  h2, h3, h4, h5, h6 {
-    margin-bottom: 0;
-  }
-
-  h3, h4 {
-    font-size: $type-size-5;
-  }
-
-  p, li {
-    font-size: $type-size-6;
-    line-height: 1.5;
-  }
-
-  img {
-    width: 100%;
+    display: block;
+    position: sticky;
+    top: calc(#{$masthead-height} + 2em);
   }
 }
 
-/*
-   Author profile and links
-   ========================================================================== */
-
 .author__avatar {
-  display: table-cell;
-  vertical-align: top;
   width: 36px;
+  border-radius: 50%;
 
   @include breakpoint($large) {
     display: block;
-    width: auto;
-    height: auto;
-  }
-
-  img {
+    width: 100%;
     max-width: 180px;
-    border-radius: 50%;
-
-    @include breakpoint($large) {
-      padding: 4px;
-      border: 1px solid var(--global-border-color);
-      box-shadow: var(--global-shadow-md);
-    }
+    padding: 4px;
+    border: 1px solid var(--global-border-color);
+    box-shadow: var(--global-shadow-md);
 
     &:hover {
       transform: translateY(-2px);
@@ -85,119 +42,42 @@
   }
 }
 
-.author__content {
-  display: table-cell;
-  vertical-align: top;
-  padding-left: 15px;
-  padding-right: 25px;
-  line-height: 1;
-
-  @include breakpoint($large) {
-    display: block;
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
 .author__name {
   margin: 0;
-
-  @include breakpoint($large) {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-}
-.sidebar .author__name {
   font-family: $sans-serif;
   font-size: $type-size-4;
   font-weight: 700;
   letter-spacing: -0.015em;
-}
-
-.author__urls-wrapper {
-  position: relative;
-  display: table-cell;
-  vertical-align: middle;
-  z-index: 10;
-  cursor: pointer;
-
-  li:last-child a {
-    margin-bottom: 0;
-  }
 
   @include breakpoint($large) {
-    display: block;
-  }
-
-  button {
-    margin-bottom: 0;
-
-    @include breakpoint($large) {
-      display: none;
-    }
+    margin: 10px 0;
   }
 }
 
-/* A dropdown under the contact button on narrow screens, a plain list on wide ones */
+.author__contact {
+  @include breakpoint($large) {
+    display: none;
+  }
+}
+
 .author__urls {
   display: none;
+  flex-basis: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
   &.is-open {
     display: block;
   }
 
-  position: absolute;
-  right: 0;
-  margin-top: 15px;
-  padding: 10px;
-  list-style-type: none;
-  border: 1px solid var(--global-border-color);
-  border-radius: $border-radius;
-  background: var(--global-bg-color);
-  z-index: -1;
-  box-shadow: 0 0 10px rgba(#000, 0.25);
-  cursor: default;
-
   @include breakpoint($large) {
     display: block;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-  }
-
-  /* arrow pointing at the contact button: a border-coloured triangle under a white one */
-  &::before,
-  &::after {
-    display: block;
-    content: "";
-    position: absolute;
-    left: calc(50% - 10px);
-    width: 0;
-    border-style: solid;
-    border-width: 0 10px 10px;
-
-    @include breakpoint($large) {
-      display: none;
-    }
-  }
-
-  &::before {
-    top: -11px;
-    border-color: var(--global-border-color) transparent;
-    z-index: 0;
-  }
-
-  &::after {
-    top: -10px;
-    border-color: #fff transparent;
-    z-index: 1;
   }
 
   li {
+    font-size: $type-size-6;
+    line-height: 1.5;
     white-space: nowrap;
   }
 
@@ -206,14 +86,16 @@
     margin-bottom: 2px;
     padding: 4px 8px;
     color: inherit;
-    font-size: $type-size-5;
     text-decoration: none;
     border-radius: $border-radius;
 
     &:hover {
-      text-decoration: none;
       color: var(--global-accent-color);
       background: var(--global-border-color-soft);
     }
+  }
+
+  i {
+    margin-right: 0.6em;
   }
 }

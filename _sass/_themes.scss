@@ -17,12 +17,8 @@ $type-size-7                : 0.6875em; // ~11px
 $medium                     : 768px;
 $large                      : 925px;    // the sidebar moves beside the content
 $x-large                    : 1280px;
-$sidebar-screen-min-width   : 1024px;   // the sidebar becomes fixed
 
 /* Design tokens */
 $border-radius              : 8px;
 $global-transition          : all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-$masthead-height            : 68px;
-$navicon-width              : 28px;
-$navicon-height             : 4px;
-$sidebar-link-max-width     : 260px;
+$masthead-height            : 4rem;     // the sidebar sticks just below the masthead, so the two must agree
