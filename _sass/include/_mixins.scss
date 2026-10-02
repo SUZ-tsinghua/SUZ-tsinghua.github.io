@@ -2,46 +2,14 @@
    MIXINS
    ========================================================================== */
 
-%tab-focus {
-  /* Default*/
-  outline: thin dotted $warning-color;
-  /* Webkit*/
-  outline: 5px auto $warning-color;
+@use "sass:math";
+
+@mixin tab-focus {
+  outline: 5px auto #fbbf24;
   outline-offset: -2px;
 }
 
-/*
-   em function
-   ========================================================================== */
-
-@function em($target, $context: $doc-font-size) {
-  @return ($target / $context) * 1em;
-}
-
-
-/*
-   Bourbon clearfix
-   ========================================================================== */
-
-/*
-  * Provides an easy way to include a clearfix for containing floats.
-  * link http://cssmojo.com/latest_new_clearfix_so_far/
-  *
-  * example scss - Usage
-  *
-  * .element {
-  *   @include clearfix;
-  * }
-  *
-  * example css - CSS Output
-  *
-  * .element::after {
-  *   clear: both;
-  *   content: "";
-  *   display: table;
-  * }
-*/
-
+/* Contain floats, http://cssmojo.com/latest_new_clearfix_so_far/ */
 @mixin clearfix {
   clear: both;
 
@@ -50,4 +18,28 @@
     content: "";
     display: table;
   }
+}
+
+/* Styles for viewports at least $width wide. In em, so the query follows the browser font size. */
+@mixin breakpoint($width) {
+  @media (min-width: math.div($width, 16px) * 1em) {
+    @content;
+  }
+}
+
+/* The layout is a fluid 12-column float grid whose gutters are a quarter of a column wide. */
+$grid-gutter: math.percentage(math.div(0.25, 14.75));
+
+/* Width of $columns grid columns and the gutters between them */
+@function grid-span($columns) {
+  @return math.percentage(math.div($columns * 1.25 - 0.25, 14.75));
+}
+
+/* Take the full width of the container, on a row of its own */
+@mixin full-width {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }

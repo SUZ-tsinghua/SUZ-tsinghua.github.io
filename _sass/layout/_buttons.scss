@@ -2,12 +2,9 @@
    BUTTONS
    ========================================================================== */
 
-/*
-   Default button
-   ========================================================================== */
+@use "../themes" as *;
 
 .btn {
-  /* default button */
   display: inline-block;
   margin-bottom: 0.25em;
   padding: 0.5em 1em;
@@ -23,38 +20,18 @@
   cursor: pointer;
 
   &:hover {
-    background-color: mix(white, #000, 20%);
+    background-color: #333;
   }
 
-  .icon {
-    margin-right: 0.5em;
-  }
-
-  .icon + .hidden {
-    margin-left: -0.5em; /* override for hidden text*/
-  }
-
-  /* fills width of parent container */
-
-  &--block {
-    display: block;
-    width: 100%;
-
-    + .btn--block {
-      margin-top: 0.25em;
-    }
-  }
-
-  /* for dark backgrounds */
+  /* outlined pill on the page background */
 
   &--inverse {
     color: var(--global-text-color) !important;
-    border: 1px solid var(--global-dark-border-color) !important; /* override*/
+    border: 1px solid var(--global-dark-border-color) !important;
     background-color: var(--global-surface-color);
     border-radius: 999px;
     padding: 0.45em 1.1em;
     font-weight: 500;
-    transition: $global-transition;
 
     &:hover {
       color: #fff !important;
@@ -63,100 +40,6 @@
       transform: translateY(-1px);
       box-shadow: var(--global-shadow-md);
     }
-  }
-
-  /* light outline */
-
-  &--light-outline {
-    border: 1px solid #fff !important; /* override*/
-    background-color: transparent;
-  }
-
-  /* information */
-
-  &--info {
-    background-color: $info-color;
-
-    &:hover {
-      background-color: mix(#000, $info-color, 20%);
-    }
-  }
-
-  /* warning */
-
-  &--warning {
-    background-color: $warning-color;
-
-    &:hover {
-      background-color: mix(#000, $warning-color, 20%);
-    }
-  }
-
-  /* success */
-
-  &--success {
-    background-color: $success-color;
-
-    &:hover {
-      background-color: mix(#000, $success-color, 20%);
-    }
-  }
-
-  /* danger */
-
-  &--danger {
-    background-color: $danger-color;
-
-    &:hover {
-      background-color: mix(#000, $danger-color, 20%);
-    }
-  }
-
-  /* disabled */
-
-  &--disabled {
-    pointer-events: none;
-    cursor: not-allowed;
-    filter: alpha(opacity=65);
-    box-shadow: none;
-    opacity: 0.65;
-  }
-
-  /* social buttons */
-
-  $social:
-  (bluesky, $bluesky-color),
-  (facebook, $facebook-color),
-  (twitter, $twitter-color),
-  (google-plus, $google-plus-color),
-  (linkedin, $linkedin-color);
-
-  @each $socialnetwork, $color in $social {
-    &--#{$socialnetwork} {
-      background-color: $color;
-
-      &:hover {
-        background-color: mix(#000, $color, 20%);
-      }
-    }
-  }
-
-  /* extra large button */
-
-  &--x-large {
-    font-size: $type-size-4;
-  }
-
-  /* large button */
-
-  &--large {
-    font-size: $type-size-5;
-  }
-
-  /* small button */
-
-  &--small {
-    font-size: $type-size-7;
   }
 }
 

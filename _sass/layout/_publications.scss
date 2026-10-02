@@ -2,6 +2,8 @@
    PUBLICATIONS
    ========================================================================== */
 
+@use "../themes" as *;
+
 .publication-layout {
   display: flex;
   align-items: flex-start;
@@ -107,13 +109,6 @@ html[data-theme="dark"] .publication-layout .publication-award {
   transform: scale(1.01);
 }
 
-/* YouTube iframe specific styling */
-.publication-video-content iframe {
-  width: 100%;
-  height: 158px; /* 16:9 aspect ratio for 280px width */
-  border-radius: 10px;
-}
-
 /* Publication buttons styling */
 .publication-buttons {
   display: flex;
@@ -132,10 +127,7 @@ html[data-theme="dark"] .publication-layout .publication-award {
   letter-spacing: 0.01em;
   text-decoration: none;
   border-radius: 999px;
-  transition: $global-transition;
   border: 1px solid transparent;
-  cursor: pointer;
-  font-family: $sans-serif;
 
   i {
     font-size: 0.85em;
@@ -192,12 +184,8 @@ html[data-theme="dark"] .publication-layout .publication-award {
 
 html[data-theme="dark"] {
   .publication-buttons .btn--primary {
-    background-color: var(--global-accent-color);
     color: #0b1220;
     font-weight: 600;
-  }
-  .publication-buttons .btn--primary:hover {
-    background-color: var(--global-accent-color-hover);
   }
   .publication-buttons .btn--warning {
     background-color: #334155;
@@ -250,9 +238,14 @@ html[data-theme="dark"] {
     border-color: var(--global-accent-color);
     color: #fff;
   }
+
+  &.is-copied {
+    background-color: #28a745;
+    color: #fff;
+  }
 }
 
-html[data-theme="dark"] .bibtex-copy:hover {
+html[data-theme="dark"] .bibtex-copy:hover:not(.is-copied) {
   color: #0b1220;
 }
 

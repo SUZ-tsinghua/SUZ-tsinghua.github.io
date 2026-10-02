@@ -2,13 +2,11 @@
    SIDEBAR
    ========================================================================== */
 
-/*
-   Default
-   ========================================================================== */
+@use "../themes" as *;
+@use "../include/mixins" as *;
 
 .sidebar {
-  -webkit-transform: translate3d(0, 0 , 0);
-          transform: translate3d(0, 0 , 0);
+  transform: translate3d(0, 0, 0);
 
   @include clearfix();
   margin-bottom: 1em;
@@ -23,18 +21,13 @@
     height: 100vh;
     overflow-y: auto;               // Add scrollbar if the sidebar is too long
     position: fixed;
-    padding-top: $masthead-height;
+    padding-top: $masthead-height;  // main.js replaces this with the measured masthead height
   }
 
   @include breakpoint($large) {
-    @include span(2 of 12);
-    opacity: 1;
-    -webkit-transition: opacity 0.2s ease-in-out;
-            transition: opacity 0.2s ease-in-out;
-
-    &:hover {
-      opacity: 1;
-    }
+    float: left;
+    width: grid-span(2);
+    margin-right: $grid-gutter;
   }
 
   @include breakpoint($x-large) {
@@ -44,7 +37,6 @@
 
   h2, h3, h4, h5, h6 {
     margin-bottom: 0;
-    font-family: $sans-serif-narrow;
   }
 
   h3, h4 {
@@ -52,29 +44,12 @@
   }
 
   p, li {
-    font-family: $sans-serif;
     font-size: $type-size-6;
     line-height: 1.5;
   }
 
   img {
     width: 100%;
-  }
-}
-
-.sidebar__right {
-  margin-bottom: 1em;
-
-  @include breakpoint($large) {
-    position: relative;
-    float: right;
-    width: $right-sidebar-width-narrow;
-    margin-left: span(0.5 of 12);
-    z-index: 10;
-  }
-
-  @include breakpoint($x-large) {
-    width: $right-sidebar-width;
   }
 }
 
@@ -86,8 +61,6 @@
   display: table-cell;
   vertical-align: top;
   width: 36px;
-  // set width only, for non-square avatars
-  // height: 36px;
 
   @include breakpoint($large) {
     display: block;
@@ -98,7 +71,6 @@
   img {
     max-width: 180px;
     border-radius: 50%;
-    transition: $global-transition;
 
     @include breakpoint($large) {
       padding: 4px;
@@ -143,44 +115,15 @@
   letter-spacing: -0.015em;
 }
 
-.sidebar .author__desktop {
-  display: none;
-  @media screen and (min-width: 1024px) {
-    display: block;
-  }
-}
-
-.author__pronouns {
-  margin: 0;
-
-  @include breakpoint($large) {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-}
-
-.author__bio {
-  margin: 0;
-
-  @include breakpoint($large) {
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-}
-
 .author__urls-wrapper {
   position: relative;
   display: table-cell;
   vertical-align: middle;
-  font-family: $sans-serif;
   z-index: 10;
-  position: relative;
   cursor: pointer;
 
-  li:last-child {
-    a {
-      margin-bottom: 0;
-    }
+  li:last-child a {
+    margin-bottom: 0;
   }
 
   @include breakpoint($large) {
@@ -196,8 +139,14 @@
   }
 }
 
+/* A dropdown under the contact button on narrow screens, a plain list on wide ones */
 .author__urls {
   display: none;
+
+  &.is-open {
+    display: block;
+  }
+
   position: absolute;
   right: 0;
   margin-top: 15px;
@@ -220,38 +169,32 @@
     box-shadow: none;
   }
 
-  &:before {
+  /* arrow pointing at the contact button: a border-coloured triangle under a white one */
+  &::before,
+  &::after {
     display: block;
     content: "";
     position: absolute;
-    top: -11px;
     left: calc(50% - 10px);
     width: 0;
     border-style: solid;
     border-width: 0 10px 10px;
-    border-color: var(--global-border-color) transparent;
-    z-index: 0;
 
     @include breakpoint($large) {
       display: none;
     }
   }
 
-  &:after {
-    display: block;
-    content: "";
-    position: absolute;
+  &::before {
+    top: -11px;
+    border-color: var(--global-border-color) transparent;
+    z-index: 0;
+  }
+
+  &::after {
     top: -10px;
-    left: calc(50% - 10px);
-    width: 0;
-    border-style: solid;
-    border-width: 0 10px 10px;
     border-color: #fff transparent;
     z-index: 1;
-
-    @include breakpoint($large) {
-      display: none;
-    }
   }
 
   li {
@@ -266,21 +209,11 @@
     font-size: $type-size-5;
     text-decoration: none;
     border-radius: $border-radius;
-    transition: $global-transition;
 
     &:hover {
       text-decoration: none;
       color: var(--global-accent-color);
       background: var(--global-border-color-soft);
-    }
-
-    .icon-pad-right {
-      color: inherit !important;
-      transition: $global-transition;
-    }
-
-    &:hover .icon-pad-right {
-      color: var(--global-accent-color) !important;
     }
   }
 }

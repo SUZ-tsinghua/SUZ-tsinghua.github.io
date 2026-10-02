@@ -1,0 +1,85 @@
+/* ==========================================================================
+   ICONS: the few Font Awesome 6 and Academicons glyphs the site uses
+   ========================================================================== */
+
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../webfonts/fa-solid-900.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../webfonts/fa-brands-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Academicons";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../fonts/academicons.ttf") format("truetype");
+}
+
+.fas,
+.fa-solid,
+.fab,
+.ai {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+}
+
+.fas,
+.fa-solid {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+.fab {
+  font-family: "Font Awesome 6 Brands";
+  font-weight: 400;
+}
+
+.ai {
+  font-family: "Academicons";
+  font-weight: 400;
+}
+
+/* fixed width, so that icons line up in a list */
+.fa-fw,
+.ai-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+$icons: (
+  "fa-award": "\f559",
+  "fa-check": "\f00c",
+  "fa-copy": "\f0c5",
+  "fa-envelope": "\f0e0",
+  "fa-file-pdf": "\f1c1",
+  "fa-github": "\f09b",
+  "fa-globe": "\f0ac",
+  "fa-moon": "\f186",
+  "fa-play": "\f04b",
+  "fa-quote-left": "\f10d",
+  "fa-sun": "\f185",
+  "fa-x-twitter": "\e61b",
+  "ai-google-scholar": "\e9d4",
+);
+
+@each $name, $glyph in $icons {
+  .#{$name}::before {
+    content: $glyph;
+  }
+}
