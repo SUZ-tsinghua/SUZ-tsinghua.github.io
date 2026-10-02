@@ -5,3 +5,6 @@ _site/
 # Gems installed into the project (bundle config set --local path vendor/bundle)
 /vendor/
 .bundle/
+
+# Claude Code session files
+.claude/
